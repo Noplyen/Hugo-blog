@@ -1,0 +1,7 @@
+### IntelliJ IDEA ###
+.idea
+.idea/dataSources/**
+*.iws
+node_modules
+### VS Code ###
+.vscode/

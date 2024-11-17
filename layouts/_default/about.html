@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+<body>
+{{- partial "header.html" . -}}
+
+<div class="min-vh-100">
+
+    <div class="container-read">
+        <div class="mt-4">
+
+            <h1 class="fs-1 fw-bold">Tentang Website</h1>
+
+            <span class="border-bottom border-black d-block"></span>
+
+            <div class="my-3">
+
+                <span style="font-size: 18px">
+                    {{.Content}}
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{{- partial "footer.html" . -}}
+</body>
+</html>

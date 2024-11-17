@@ -1,0 +1,125 @@
+
+.container-read{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.button-copy{
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid black;
+    font-size: 1rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: black;
+    }
+
+.button-copy:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+.sidebar-link-custom {
+    display: block;
+    padding: 5px 10px;
+    font-size: 1.15rem;
+    font-weight: var(--bs-nav-link-font-weight);
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.sidebar-link-custom:hover{
+    background-color: #E7F0DC;
+}
+
+.link-underline {
+    color: black;
+    display: block;
+    padding: 1px;
+    font-weight: var(--bs-nav-link-font-weight);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.link-underline:hover {
+    text-decoration: underline;
+    text-decoration-color: black!important;
+}
+
+.card-landscape {
+    max-width: 23rem;
+    max-height: 21rem;
+    border-radius: 0;
+    border: 1px solid black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-landscape img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+}
+
+.card-landscape figure{
+    max-width: 400px;
+}
+
+.card-landscape-body {
+    padding: 10px;
+}
+
+.card-landscape-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+    max-height: 3.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-landscape-date {
+    color: gray;
+}
+
+.card-text{
+    font-size: 14px;
+}
+
+.link-card{
+    text-decoration: none;
+    color: black;
+}
+
+.link-card:hover{
+    .card-landscape-title{
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+    }
+}
+
+
+/*HIGHLIGHT CODE*/
+.highlight-wrapper{
+    border: 1px solid #a19f9f;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .container-read{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}

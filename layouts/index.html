@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="container-fluid">
+    <div class="d-flex flex-wrap gap-4 justify-content-center py-4">
+
+        {{ range .Site.RegularPages }}
+        {{ if eq .Section "blog" }}
+        <div class="card-landscape">
+            <figure class="" style="margin-bottom: 0 !important;">
+                <img src="{{ .Params.thumbnail | default "https://img.freepik.com/free-vector/thumbnail-design-with-mountain-landscape_1308-121802.jpg" }}"
+                class="card-img-top img-fluid" alt="{{ .Title }}">
+            </figure>
+            <div class="card-landscape-body">
+                <a href="{{ .RelPermalink }}" class="link-card">
+                    <h5 class="card-landscape-title">{{ .Title }}</h5>
+                    <p class="card-text">Tanggal: <span class="card-landscape-date">{{ .Date.Format "2006-01-02" }}</span></p>
+                </a>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+    </div>
+</div>
+{{ end }}

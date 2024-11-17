@@ -1,0 +1,15 @@
+/// BUTTON
+.btn:hover {
+  color: black;
+  transition: color 0.3s, background 0.3s, box-shadow 0.3s;
+  border: 1px solid black;
+}
+
+// NAVBAR
+.navbar-toggler {
+  border: none ;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+<body>
+{{- partial "header.html" . -}}
+<div class="min-vh-100">
+
+    <div class="container-read my-5">
+        <div class="mt-4">
+
+
+            <div class="d-flex justify-content-end"
+                 id="google_translate_element"></div>
+
+
+
+            <h1 class="fs-1 fw-bold">{{.Title}}</h1>
+
+            <div class="mt-3">
+
+                <div class="d-flex justify-content-between">
+                    <span class="d-block">author : {{ .Params.author.name }}</span>
+
+                    <input type="hidden" id="link-copy" value="{{ .Permalink }}">
+
+                    <button type="button"
+                            id="button-copy"
+                            class="button-copy d-inline"
+                            data-clipboard-target="#link-copy">
+                        copy url
+                    </button>
+
+                </div>
+                <span class="d-block">published on : {{ .Date | dateFormat "2 Jan 2006" }}</span>
+
+            </div>
+
+            <div class="my-3">
+
+                {{ with .Params.thumbnail }}
+                <figure style="max-width: 600px;" class="mx-auto">
+                    <img alt="thumbnail"
+                         class="card-img-top img-fluid"
+                         src="/thumbnail/{{ . }}.jpeg">
+                </figure>
+                {{ end }}
+
+
+                <span style="font-size: 18px">
+                    {{.Content}}
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'id'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        ///// COPY LINK URL ARTICLE/BLOG
+        const btn = document.getElementById('button-copy');
+        var clipboard = new ClipboardJS(btn);
+
+        clipboard.on('success', function (e) {
+            const currentLabel = btn.innerHTML;
+
+            if (btn.innerHTML === 'copied') {
+                return;
+            }
+
+            // Update button label
+            btn.innerHTML = 'copied';
+
+            setTimeout(function () {
+                btn.innerHTML = currentLabel;
+            }, 2000)
+        });
+    </script>
+
+    <script>
+        function createCopyButton(highlightDiv) {
+            const button = document.createElement("button");
+            button.className = "button-copy";
+            button.type = "button";
+            button.innerText = "Copy";
+            button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
+            highlightDiv.insertBefore(button, highlightDiv.firstChild);
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "highlight-wrapper";
+            highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+            wrapper.appendChild(highlightDiv);
+        }
+
+        document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+
+        async function copyCodeToClipboard(button, highlightDiv) {
+            const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code").innerText;
+            try {
+                var result = await navigator.permissions.query({ name: "clipboard-write" });
+                if (result.state == "granted" || result.state == "prompt") {
+                    await navigator.clipboard.writeText(codeToCopy);
+                } else {
+                    copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+                }
+            } catch (_) {
+                copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+            } finally {
+                button.blur();
+                button.innerText = "copied";
+                setTimeout(function () {
+                    button.innerText = "copy";
+                }, 2000);  }
+        }
+
+        function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
+            const textArea = document.createElement("textArea");
+            textArea.contentEditable = "true";
+            textArea.readOnly = "false";
+            textArea.className = "copyable-text-area";
+            textArea.value = codeToCopy;
+            highlightDiv.insertBefore(textArea, highlightDiv.firstChild);
+            const range = document.createRange();
+            range.selectNodeContents(textArea);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            textArea.setSelectionRange(0, 999999);
+            document.execCommand("copy");
+            highlightDiv.removeChild(textArea);
+        }
+
+    </script>
+
+
+
+</div>
+{{- partial "footer.html" . -}}
+</body>
+</html>
