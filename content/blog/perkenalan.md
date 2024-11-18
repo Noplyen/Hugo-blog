@@ -4,6 +4,7 @@ date: 12 jan 2024
 draft: false
 slug: "perkenalan"
 description: "perkenalan penulis blog dari website"
+thumbnail: 'spring-boot'
 author:
     email:
     name: "black-depressionises"

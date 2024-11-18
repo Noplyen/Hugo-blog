@@ -6,8 +6,8 @@
         {{ if eq .Section "blog" }}
         <div class="card-landscape">
             <figure class="" style="margin-bottom: 0 !important;">
-                <img src="{{ .Params.thumbnail | default "https://img.freepik.com/free-vector/thumbnail-design-with-mountain-landscape_1308-121802.jpg" }}"
-                class="card-img-top img-fluid" alt="{{ .Title }}">
+                <img src="/thumbnail/{{ .Params.thumbnail | default "knowledge" }}.webp"
+                class="card-img-top img-fluid border" alt="{{ .Title }}">
             </figure>
             <div class="card-landscape-body">
                 <a href="{{ .RelPermalink }}" class="link-card">

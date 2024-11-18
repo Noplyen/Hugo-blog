@@ -37,11 +37,17 @@
 
             <div class="my-3">
 
-                {{ with .Params.thumbnail }}
+                {{ if .Params.thumbnail }}
                 <figure style="max-width: 600px;" class="mx-auto">
                     <img alt="thumbnail"
-                         class="card-img-top img-fluid"
-                         src="/thumbnail/{{ . }}.jpeg">
+                         class="card-img-top img-fluid border border-black"
+                         src="/thumbnail/{{ .Params.thumbnail }}.webp">
+                </figure>
+                {{ else }}
+                <figure style="max-width: 600px;" class="mx-auto">
+                    <img alt="default-thumbnail"
+                         class="card-img-top img-fluid border border-black"
+                         src="/thumbnail/knowledge.webp">
                 </figure>
                 {{ end }}
 

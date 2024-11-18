@@ -4,6 +4,7 @@ date: 12 jan 2024
 draft: false
 slug: "how-to-connect-multiple-database-at-codeigniter-4"
 description: "How To Connect Multiple Database At Codeigniter 4"
+thumbnail: "codeigniter"
 author:
     email:
     name: "Standartorz-Poggly"
