@@ -112,8 +112,23 @@ kosongkan isi `username`,`password` dan `database` pada array tersebut.
 
 {{< /callout >}}
 
-3. Selanjutnya jika anda menggunakan model anda perlu menambahkan `protected $DBGroup = "nama_konfigurasi";`
+3. Selanjutnya jika anda menggunakan class model anda perlu menambahkan `protected $DBGroup = "nama_konfigurasi";`
 atau jika anda menggunakan query builder anda perlu menambah nama group konfigurasi koneksi `\Config\Database::connect("product");`.
+
+_contoh :_
+
+```php
+class UserModel extends Model 
+{
+    protected $table            = 'users';
+    protected $primaryKey       = 'id';
+    protected $allowedFields    =
+        [
+            "id",
+            "email","password",
+        ];
+    protected $DBGroup = "default";
+```
 
 ### Penjelasan
 1. Penggunaan `.env`  sebagai konfigurasi sebenarnya akan di load

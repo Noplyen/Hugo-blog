@@ -1,0 +1,27 @@
+<figure style="max-width: 1000px; max-height: 600px!important;" class="mx-auto my-3">
+    <img src="{{ .Site.BaseURL }}blog/image/{{ .Get "src" }}"
+    style="max-height: {{ .Get "height" | default "100%" }}px!important; max-width: {{ .Get "width" | default "100%" }}px!important;"
+    class="card-img-top img-fluid"
+    data-bs-toggle="modal"
+    data-bs-target="#{{.Get "id"}}"
+    alt="{{ .Get "alt" }}" >
+    <figcaption style="font-size: 16px;" class="text-decoration-underline fst-italic">
+        {{.Get "caption"}}
+    </figcaption>
+</figure>
+
+<div class="modal fade" id="{{.Get "id"}}" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-0">
+            <div class="modal-header border-bottom border-black">
+                <h5 class="modal-title" id="imageModalLabel">{{.Get "caption"}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <img src="{{ .Site.BaseURL }}blog/image/{{ .Get "src" }}"
+                     alt="{{ .Get "alt" }}"
+                     class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>

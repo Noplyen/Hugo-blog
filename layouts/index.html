@@ -2,8 +2,8 @@
 <div class="container-fluid">
     <div class="d-flex flex-wrap gap-4 justify-content-center py-4">
 
-        {{ range .Site.RegularPages }}
-        {{ if eq .Section "blog" }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") }}
+        {{ range $paginator.Pages }}
         <div class="card-landscape">
             <figure class="" style="margin-bottom: 0 !important;">
                 <img src="/thumbnail/{{ .Params.thumbnail | default "knowledge" }}.webp"
@@ -17,8 +17,16 @@
             </div>
         </div>
         {{ end }}
-        {{ end }}
 
+    </div>
+
+    <div class="pagination">
+        {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}">Previous</a>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}">Next</a>
+        {{ end }}
     </div>
 </div>
 {{ end }}

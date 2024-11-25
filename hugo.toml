@@ -1,7 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'ByNone'
-paginate = 9
+title = 'bexvo'
+paginate = 6
 [markup]
   [markup.highlight]
     codeFences = true
