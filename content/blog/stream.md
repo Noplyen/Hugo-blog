@@ -1,7 +1,7 @@
 ---
 title: "Belajar Java Stream"
 date: 19 jan 2024
-draft: false
+draft: true
 slug: "belajar-java-stream"
 description: "Panduan dasar untuk memahami Java Stream API"
 thumbnail: java
