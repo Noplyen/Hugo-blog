@@ -11,7 +11,7 @@
 </figure>
 
 <div class="modal fade" id="{{.Get "id"}}" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content rounded-0">
             <div class="modal-header border-bottom border-black">
                 <h5 class="modal-title" id="imageModalLabel">{{.Get "caption"}}</h5>
@@ -20,6 +20,8 @@
             <div class="modal-body d-flex justify-content-center">
                 <img src="/blog/image/{{ .Get "src" }}"
                      alt="{{ .Get "alt" }}"
+                    width=100%
+                    height=100%
                      class="img-fluid">
             </div>
         </div>

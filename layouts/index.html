@@ -11,8 +11,8 @@
             </figure>
             <div class="card-landscape-body">
                 <a href="{{ .RelPermalink }}" class="link-card">
+                    <span class="card-text">Tanggal: <span class="card-landscape-date">{{ .Date.Format "2006-01-02" }}</span></span>
                     <h5 class="card-landscape-title">{{ .Title }}</h5>
-                    <p class="card-text">Tanggal: <span class="card-landscape-date">{{ .Date.Format "2006-01-02" }}</span></p>
                 </a>
             </div>
         </div>

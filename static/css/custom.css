@@ -57,10 +57,9 @@
 
 .card-landscape {
     max-width: 23rem;
-    max-height: 25rem;
+    height: 19rem;
     border-radius: 0;
     border: 1px solid black;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -77,19 +76,19 @@
 
 .card-landscape-body {
     padding: 10px;
+    height: 100%;
 }
 
 .card-landscape-title {
     font-size: 18px;
     font-weight: bold;
-    line-height: 1.4;
-    max-height: calc(1.4em * 2);
+    text-wrap: balance;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
     text-overflow: ellipsis;
-    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .card-landscape-date {
