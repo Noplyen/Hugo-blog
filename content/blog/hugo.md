@@ -43,7 +43,7 @@ sendiri lebih menggunakan penyimpanan `static`
 untuk assets seperti `css`,`js` dan sebagainya.
 7. `themes` template yang kalian gunakan, semisalnya kalian menggunakan template orang lain
 
-_Download template seperti website ini disini [here](https://drive.google.com/file/d/1NKnaD2XbdxKYqlKIwQbu5OhSTtWaJsuh/view?usp=sharing)_
+_Download template seperti website ini disini [here](https://drive.google.com/drive/folders/1s_6Hs0H8S0LIPW6K14N2Wn4u3WXPwNLx?usp=sharing)_
 
 ### Command Line Hugo
 
