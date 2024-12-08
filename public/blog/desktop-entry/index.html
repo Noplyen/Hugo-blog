@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="9GcPPg4k0lUOwModdQCYP1LMNdgLismdaIAXj_JyQCU" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/clipboard-js/dist/clipboard.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9d4a42d6333b453f9938d1e8ac7bdd9b"}'></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css">
+
+    <meta name="description"
+          content="how to create desktop entry linux ubuntu">
+
+    <meta name="author"
+          content="Rey-Li-Gionese">
+
+
+    <title>
+        Membuat Desktop Entry
+    </title>
+
+</head><body><nav class="navbar bg-body-primary-color sticky-top
+border-bottom border-2 border-primary-color bg-white">
+    <div class="container-fluid">
+
+        <div class="mx-auto">
+            <a class="navbar-brand d-flex align-items-center"
+               href="http://localhost:1313/">
+                <img src="/Bexvo.png"
+                     alt="extor"
+                     width="70" height="40">
+            </a>
+        </div>
+
+</nav><div class="min-vh-100">
+
+    <div class="container-read my-5">
+        <div class="mt-4">
+
+
+            <div class="d-flex justify-content-end"
+                 id="google_translate_element"></div>
+
+
+
+            <h1 class="fs-1 fw-bold">Membuat Desktop Entry</h1>
+
+            <div class="mt-3">
+
+                <div class="d-flex justify-content-between">
+                    <span class="d-block">author : Rey-Li-Gionese</span>
+
+                    <input type="hidden" id="link-copy" value="http://localhost:1313/blog/desktop-entry/">
+
+                    <button type="button"
+                            id="button-copy"
+                            class="button-copy d-inline"
+                            data-clipboard-target="#link-copy">
+                        copy url
+                    </button>
+
+                </div>
+                <span class="d-block">published on : 20 Jan 2024</span>
+
+            </div>
+
+            <div class="my-3">
+
+                
+                <figure style="max-width: 600px;" class="mx-auto">
+                    <img alt="thumbnail"
+                         class="card-img-top img-fluid border border-black"
+                         src="/thumbnail/linux.webp">
+                </figure>
+                
+
+
+                <span style="font-size: 18px">
+                    <h3 id="pendahuluan">Pendahuluan</h3>
+<p>Saat menginstal perangkat lunak di Linux dengan format <code>.tar.gz</code>, kita biasanya perlu mengekstraknya
+terlebih dahulu sebelum dapat menggunakan aplikasinya. File yang diekstrak sering kali berupa skrip <code>.sh</code> atau file <code>AppImage</code>.
+Namun, sangat merepotkan jika kita harus masuk ke folder penyimpanan setiap kali ingin menjalankan aplikasi tersebut.
+Bagaimana cara agar aplikasi tersebut muncul di menu utama atau desktop Anda? Solusinya adalah dengan membuat Desktop Entry, simak langkahnya berikut.</p>
+<h3 id="langkah---langkah">Langkah - langkah</h3>
+<ol>
+<li>Buat file berekstensi <code>.desktop</code></li>
+<li>Kalian bisa membuka terminal lalu gunakan command <code>touch nama_file.desktop</code></li>
+<li>Buka file dengan file editor atau dengan <code>nano</code>  menggunakan command  <code>nano nama_file.desktop</code></li>
+<li>Paste kode berikut dan sesuaikan</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    <span class="o">[</span>Desktop Entry<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">Name</span><span class="o">=</span> application name ex : IntelliJ IDEA
+</span></span><span class="line"><span class="cl">    <span class="nv">Comment</span><span class="o">=</span> a short description <span class="k">for</span> app ex:IntelliJ IDEA IDE <span class="k">for</span> development
+</span></span><span class="line"><span class="cl">    <span class="nv">Exec</span><span class="o">=</span> path to the applications bash file Ex : /downloads/intellij/idea.sh
+</span></span><span class="line"><span class="cl">    <span class="nv">Icon</span><span class="o">=</span> path <span class="k">for</span> icon desktop entry
+</span></span><span class="line"><span class="cl">    <span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">Type</span><span class="o">=</span>Application
+</span></span><span class="line"><span class="cl">    <span class="nv">Categories</span><span class="o">=</span> category desktop entry ex: Development<span class="p">;</span>IDE<span class="p">;</span>
+</span></span></code></pre></div><ol start="5">
+<li>Pindahkan file tersebut ke   <code>/usr/share/applications</code></li>
+</ol>
+<h3 id="informasi-lanjut">Informasi Lanjut</h3>
+<ol>
+<li>Command line</li>
+</ol>
+ 
+
+ 
+
+
+<figure style="max-width: 1000px; max-height: 600px!important;" class="mx-auto my-3">
+    <img src="/blog/image/desktop-entry-1.png"
+         style="max-height: 100%px!important; max-width: 600px!important;"
+    class="card-img-top img-fluid"
+    data-bs-toggle="modal"
+    data-bs-target="#1"
+    alt="desktop entry" >
+    <figcaption style="font-size: 16px;" class="text-decoration-underline fst-italic">
+        desktop entry
+    </figcaption>
+</figure>
+
+<div class="modal fade" id="1" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-0">
+        <div class="modal-header border-bottom border-black">
+            <h5 class="modal-title" id="imageModalLabel">desktop entry</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+            <img src="/blog/image/desktop-entry-1.png"
+                 alt="desktop entry"
+            width="100%"
+            height="100%"
+            class="img-fluid">
+        </div>
+    </div>
+</div>
+</div>
+
+<ol start="2">
+<li>Target file</li>
+</ol>
+ 
+
+ 
+
+
+<figure style="max-width: 1000px; max-height: 600px!important;" class="mx-auto my-3">
+    <img src="/blog/image/desktop-entry-2.png"
+         style="max-height: 100%px!important; max-width: 100%px!important;"
+    class="card-img-top img-fluid"
+    data-bs-toggle="modal"
+    data-bs-target="#2"
+    alt="file target" >
+    <figcaption style="font-size: 16px;" class="text-decoration-underline fst-italic">
+        file target
+    </figcaption>
+</figure>
+
+<div class="modal fade" id="2" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-0">
+        <div class="modal-header border-bottom border-black">
+            <h5 class="modal-title" id="imageModalLabel">file target</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+            <img src="/blog/image/desktop-entry-2.png"
+                 alt="file target"
+            width="100%"
+            height="100%"
+            class="img-fluid">
+        </div>
+    </div>
+</div>
+</div>
+
+<p>tekan <code>ctrl+l</code> untuk copy path, lalu gunakan <code>.svg</code> untuk value icon dan <code>.sh</code> untuk value exec</p>
+
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'id'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        
+        const btn = document.getElementById('button-copy');
+        var clipboard = new ClipboardJS(btn);
+
+        clipboard.on('success', function (e) {
+            const currentLabel = btn.innerHTML;
+
+            if (btn.innerHTML === 'copied') {
+                return;
+            }
+
+            
+            btn.innerHTML = 'copied';
+
+            setTimeout(function () {
+                btn.innerHTML = currentLabel;
+            }, 2000)
+        });
+    </script>
+
+    <script>
+        function createCopyButton(highlightDiv) {
+            const button = document.createElement("button");
+            button.className = "button-copy";
+            button.type = "button";
+            button.innerText = "copy";
+            button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
+            highlightDiv.insertBefore(button, highlightDiv.firstChild);
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "highlight-wrapper";
+            highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+            wrapper.appendChild(highlightDiv);
+        }
+
+        document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+
+        async function copyCodeToClipboard(button, highlightDiv) {
+            const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code").innerText;
+            try {
+                var result = await navigator.permissions.query({ name: "clipboard-write" });
+                if (result.state == "granted" || result.state == "prompt") {
+                    await navigator.clipboard.writeText(codeToCopy);
+                } else {
+                    copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+                }
+            } catch (_) {
+                copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+            } finally {
+                button.blur();
+                button.innerText = "copied";
+                setTimeout(function () {
+                    button.innerText = "copy";
+                }, 2000);  }
+        }
+
+        function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
+            const textArea = document.createElement("textArea");
+            textArea.contentEditable = "true";
+            textArea.readOnly = "false";
+            textArea.className = "copyable-text-area";
+            textArea.value = codeToCopy;
+            highlightDiv.insertBefore(textArea, highlightDiv.firstChild);
+            const range = document.createRange();
+            range.selectNodeContents(textArea);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            textArea.setSelectionRange(0, 999999);
+            document.execCommand("copy");
+            highlightDiv.removeChild(textArea);
+        }
+
+    </script>
+
+
+
+</div><div class="border-top border-primary-color">
+
+    <div class="container-xl">
+
+        <div class="d-flex flex-column align-items-lg-center text-lg-center">
+            <span class="text-lg-center fs-5">site map</span>
+            <div class="d-flex flex-row gap-2 justify-content-lg-center">
+                <a class="link-underline" aria-current="page" href="http://localhost:1313/">Home</a>
+                <a class="link-underline" href="#">Author</a>
+                <a class="link-underline" href="#">Resource</a>
+                <a class="link-underline" href="http://localhost:1313//about">About</a>
+            </div>
+
+            <div class="mb-3">
+                <span class="small" style="color: #8a8c88">build with hugo - custom theme By Me</span>
+            </div>
+
+        </div>
+
+    </div>
+</div></body>
+</html>

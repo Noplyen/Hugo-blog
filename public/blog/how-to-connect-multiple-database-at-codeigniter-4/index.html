@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="9GcPPg4k0lUOwModdQCYP1LMNdgLismdaIAXj_JyQCU" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/clipboard-js/dist/clipboard.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9d4a42d6333b453f9938d1e8ac7bdd9b"}'></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css">
+
+    <meta name="description"
+          content="How To Connect Multiple Database At Codeigniter 4">
+
+    <meta name="author"
+          content="Standartorz-Poggly">
+
+
+    <title>
+        Bagaimana Cara Mengkoneksikan Lebih Dari 1 Database Di Codeigniter 4
+    </title>
+
+</head><body><nav class="navbar bg-body-primary-color sticky-top
+border-bottom border-2 border-primary-color bg-white">
+    <div class="container-fluid">
+
+        <div class="mx-auto">
+            <a class="navbar-brand d-flex align-items-center"
+               href="http://localhost:1313/">
+                <img src="/Bexvo.png"
+                     alt="extor"
+                     width="70" height="40">
+            </a>
+        </div>
+
+</nav><div class="min-vh-100">
+
+    <div class="container-read my-5">
+        <div class="mt-4">
+
+
+            <div class="d-flex justify-content-end"
+                 id="google_translate_element"></div>
+
+
+
+            <h1 class="fs-1 fw-bold">Bagaimana Cara Mengkoneksikan Lebih Dari 1 Database Di Codeigniter 4</h1>
+
+            <div class="mt-3">
+
+                <div class="d-flex justify-content-between">
+                    <span class="d-block">author : Standartorz-Poggly</span>
+
+                    <input type="hidden" id="link-copy" value="http://localhost:1313/blog/how-to-connect-multiple-database-at-codeigniter-4/">
+
+                    <button type="button"
+                            id="button-copy"
+                            class="button-copy d-inline"
+                            data-clipboard-target="#link-copy">
+                        copy url
+                    </button>
+
+                </div>
+                <span class="d-block">published on : 12 Jan 2024</span>
+
+            </div>
+
+            <div class="my-3">
+
+                
+                <figure style="max-width: 600px;" class="mx-auto">
+                    <img alt="thumbnail"
+                         class="card-img-top img-fluid border border-black"
+                         src="/thumbnail/codeigniter.webp">
+                </figure>
+                
+
+
+                <span style="font-size: 18px">
+                    <h3 id="pendahuluan">Pendahuluan</h3>
+<p>Terkadang kita ingin memisahkan table pada kasus aplikasi kita pada database
+berbeda untuk lebih terorganisir, contohnya kita memiliki aplikasi e-commerce
+terdapat data user dan produk, akan menjadi sulit dan tidak terorganisir
+ketika table user seperti privilege, role, user bergabung dengan produk seperti
+produk category, produk detail bahkan user order.</p>
+<h3 id="langkah---langkah">Langkah - langkah</h3>
+<ol>
+<li>Pastikan anda telah membuat database beserta table yang diperlukan.</li>
+<li>Buat konfigurasi koneksi ke database, anda boleh menggunakan <code>.env</code>
+atau pada <code>app\Config\Database.php</code>.</li>
+</ol>
+<p><em>contoh dengan <code>.env</code></em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">hostname</span> <span class="o">=</span> <span class="nx">localhost</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">database</span> <span class="o">=</span> <span class="nx">user_db</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">root</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">password</span> <span class="o">=</span> <span class="nx">root</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">DBDriver</span> <span class="o">=</span> <span class="nx">MySQLi</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">DBPrefix</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">port</span> <span class="o">=</span> <span class="mi">3306</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">hostname</span> <span class="o">=</span> <span class="nx">localhost</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">database</span> <span class="o">=</span> <span class="nx">product_db</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">root</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">password</span> <span class="o">=</span> <span class="nx">root</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">DBDriver</span> <span class="o">=</span> <span class="nx">MySQLi</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">DBPrefix</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">database</span><span class="o">.</span><span class="nx">product</span><span class="o">.</span><span class="nx">port</span> <span class="o">=</span> <span class="mi">3306</span>
+</span></span></code></pre></div><p><em>contoh dengan  <code>app\Config\Database.php</code></em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"> <span class="k">public</span> <span class="k">array</span> <span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DSN&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;hostname&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;username&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;password&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;database&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;user_db&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBDriver&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBPrefix&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;pConnect&#39;</span>     <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBDebug&#39;</span>      <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;charset&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBCollat&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;utf8mb4_general_ci&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;swapPre&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;encrypt&#39;</span>      <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;compress&#39;</span>     <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;strictOn&#39;</span>     <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;failover&#39;</span>     <span class="o">=&gt;</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;port&#39;</span>         <span class="o">=&gt;</span> <span class="mi">3306</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;numberNative&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;dateFormat&#39;</span>   <span class="o">=&gt;</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;date&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Y-m-d&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;datetime&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;time&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;H:i:s&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">array</span> <span class="nv">$product</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DSN&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;hostname&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;username&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;password&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;database&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;product_db&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBDriver&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBPrefix&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;pConnect&#39;</span>     <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBDebug&#39;</span>      <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;charset&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;DBCollat&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;utf8mb4_general_ci&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;swapPre&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;encrypt&#39;</span>      <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;compress&#39;</span>     <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;strictOn&#39;</span>     <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;failover&#39;</span>     <span class="o">=&gt;</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;port&#39;</span>         <span class="o">=&gt;</span> <span class="mi">3306</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;numberNative&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;dateFormat&#39;</span>   <span class="o">=&gt;</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;date&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Y-m-d&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;datetime&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;time&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;H:i:s&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">];</span>
+</span></span></code></pre></div><div class="my-3 rounded-3 border border-primary">
+<div class="my-callout-content rounded-3">
+
+    <div class="p-2 rounded-3"
+            style="border-left: 7px solid dodgerblue;background-color: #c8d5ef">
+        <strong class="ms-3 d-block">ℹ️ info</strong>
+        <div class="ps-3 ">
+
+jika anda menggunakan konfigurasi `.env` anda masih
+perlu menuliskan array **tanpa** konfigurasi/value di array tersebut.
+Pastikan nama array sama dengan nama konfigurasi pada `.env`, contoh
+jika `.env` `database.product.hostname` maka buat array dengan nama `$product`
+kosongkan isi `username`,`password` dan `database` pada array tersebut.
+
+</div>
+    </div>
+
+</div>
+</div>
+
+<ol start="3">
+<li>Selanjutnya jika anda menggunakan class model anda perlu menambahkan <code>protected $DBGroup = &quot;nama_konfigurasi&quot;;</code>
+atau jika anda menggunakan query builder anda perlu menambah nama group konfigurasi koneksi <code>\Config\Database::connect(&quot;product&quot;);</code>.</li>
+</ol>
+<p><em>contoh :</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">Model</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$table</span>            <span class="o">=</span> <span class="s1">&#39;users&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$primaryKey</span>       <span class="o">=</span> <span class="s1">&#39;id&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$allowedFields</span>    <span class="o">=</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;email&#34;</span><span class="p">,</span><span class="s2">&#34;password&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$DBGroup</span> <span class="o">=</span> <span class="s2">&#34;default&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="penjelasan">Penjelasan</h3>
+<ol>
+<li>Penggunaan <code>.env</code>  sebagai konfigurasi sebenarnya akan di load
+oleh codeigniter dan value akan di passing ke array pada <code>app\Config\Database.php</code>.</li>
+</ol>
+
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'id'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        
+        const btn = document.getElementById('button-copy');
+        var clipboard = new ClipboardJS(btn);
+
+        clipboard.on('success', function (e) {
+            const currentLabel = btn.innerHTML;
+
+            if (btn.innerHTML === 'copied') {
+                return;
+            }
+
+            
+            btn.innerHTML = 'copied';
+
+            setTimeout(function () {
+                btn.innerHTML = currentLabel;
+            }, 2000)
+        });
+    </script>
+
+    <script>
+        function createCopyButton(highlightDiv) {
+            const button = document.createElement("button");
+            button.className = "button-copy";
+            button.type = "button";
+            button.innerText = "copy";
+            button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
+            highlightDiv.insertBefore(button, highlightDiv.firstChild);
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "highlight-wrapper";
+            highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+            wrapper.appendChild(highlightDiv);
+        }
+
+        document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+
+        async function copyCodeToClipboard(button, highlightDiv) {
+            const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code").innerText;
+            try {
+                var result = await navigator.permissions.query({ name: "clipboard-write" });
+                if (result.state == "granted" || result.state == "prompt") {
+                    await navigator.clipboard.writeText(codeToCopy);
+                } else {
+                    copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+                }
+            } catch (_) {
+                copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+            } finally {
+                button.blur();
+                button.innerText = "copied";
+                setTimeout(function () {
+                    button.innerText = "copy";
+                }, 2000);  }
+        }
+
+        function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
+            const textArea = document.createElement("textArea");
+            textArea.contentEditable = "true";
+            textArea.readOnly = "false";
+            textArea.className = "copyable-text-area";
+            textArea.value = codeToCopy;
+            highlightDiv.insertBefore(textArea, highlightDiv.firstChild);
+            const range = document.createRange();
+            range.selectNodeContents(textArea);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            textArea.setSelectionRange(0, 999999);
+            document.execCommand("copy");
+            highlightDiv.removeChild(textArea);
+        }
+
+    </script>
+
+
+
+</div><div class="border-top border-primary-color">
+
+    <div class="container-xl">
+
+        <div class="d-flex flex-column align-items-lg-center text-lg-center">
+            <span class="text-lg-center fs-5">site map</span>
+            <div class="d-flex flex-row gap-2 justify-content-lg-center">
+                <a class="link-underline" aria-current="page" href="http://localhost:1313/">Home</a>
+                <a class="link-underline" href="#">Author</a>
+                <a class="link-underline" href="#">Resource</a>
+                <a class="link-underline" href="http://localhost:1313//about">About</a>
+            </div>
+
+            <div class="mb-3">
+                <span class="small" style="color: #8a8c88">build with hugo - custom theme By Me</span>
+            </div>
+
+        </div>
+
+    </div>
+</div></body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on bexvo</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on bexvo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ilmu Dasar Terpakai Untuk Membaca Surat Tanah</title>
+      <link>http://localhost:1313/blog/ilmu-dasar-matematika/</link>
+      <pubDate>Tue, 30 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ilmu-dasar-matematika/</guid>
+      <description>Pendahuluan Ilmu baru yang saya dapat, walau sedikit akan saya bagikan. Akhirnya salah satu ilmu yang diajarkan disekolah dahulu terpakai, yakni ukuran skala dan luas dari bangun datar. Jika kita mengurus surat tanah sebagaian ilmu itu terpakai, untuk memahami surat tanah itu.&#xA;Isi Pada sertifikat tanah ada lembaran berisi gambar peta dengan skala 1:500 umumnya, ini bisa kita gunakan untuk mengetahui ukuran asli dari petak tanah yang ada, walaupun sebenarnya pada surat tersebut sudah tertulis jumlah luas tetapi setidaknya kita mengetahuinya, untuk apa skala dan gambar tersebut digunakan.</description>
+    </item>
+    <item>
+      <title>Membuat Desktop Entry</title>
+      <link>http://localhost:1313/blog/desktop-entry/</link>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/desktop-entry/</guid>
+      <description>Pendahuluan Saat menginstal perangkat lunak di Linux dengan format .tar.gz, kita biasanya perlu mengekstraknya terlebih dahulu sebelum dapat menggunakan aplikasinya. File yang diekstrak sering kali berupa skrip .sh atau file AppImage. Namun, sangat merepotkan jika kita harus masuk ke folder penyimpanan setiap kali ingin menjalankan aplikasi tersebut. Bagaimana cara agar aplikasi tersebut muncul di menu utama atau desktop Anda? Solusinya adalah dengan membuat Desktop Entry, simak langkahnya berikut.&#xA;Langkah - langkah Buat file berekstensi .</description>
+    </item>
+    <item>
+      <title>Berkenalan Dengan Hugo</title>
+      <link>http://localhost:1313/blog/introduction-to-hugo/</link>
+      <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/introduction-to-hugo/</guid>
+      <description>Pendahuluan Website dibagi menjadi 2 kategori yakni, statis dan dinamis. Perbedaan mendasar dan mudah dikenali adalah bagaimana website tersebut menyajikan data, apakah menggunakan database dan bagaimana interaksi website tersebut dengan user, apakah user dapat mencari konten yang dibutuhkan atau user dapat membuat dan menghasilkan data pada website tersebut. Jika hal diatas dapat dilakukan maka website tersebut adalah jenis website dinamis, contoh saja website berita, atau elearning sekolah. Contoh website statis seperti halaman portofolio yang hanya memberikan data profile seseorang atau seperti website ini.</description>
+    </item>
+    <item>
+      <title>Bagaimana Cara Mengkoneksikan Lebih Dari 1 Database Di Codeigniter 4</title>
+      <link>http://localhost:1313/blog/how-to-connect-multiple-database-at-codeigniter-4/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/how-to-connect-multiple-database-at-codeigniter-4/</guid>
+      <description>Pendahuluan Terkadang kita ingin memisahkan table pada kasus aplikasi kita pada database berbeda untuk lebih terorganisir, contohnya kita memiliki aplikasi e-commerce terdapat data user dan produk, akan menjadi sulit dan tidak terorganisir ketika table user seperti privilege, role, user bergabung dengan produk seperti produk category, produk detail bahkan user order.&#xA;Langkah - langkah Pastikan anda telah membuat database beserta table yang diperlukan. Buat konfigurasi koneksi ke database, anda boleh menggunakan .</description>
+    </item>
+    <item>
+      <title>Iterable Iterator</title>
+      <link>http://localhost:1313/blog/iterable-iterator-java/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/iterable-iterator-java/</guid>
+      <description>Pendahuluan ℹ️ info Sebelum mempelajari iterable dan iterator anda diharuskan memahami collection atau setidaknya tipe data array. Iterable dan iterator merupakan interface yang digunakan untuk iterasi atau membaca data pada suatu list. Interface Collection extends iterable yang berarti subclass atau class implementasinya bisa diterapkan foreach untuk iterasi. Didalam interface Iterable memiliki method getIterator yang mengembalikan iterator, perbedaan diantara kedua interface tersebut adalah iterator berfokus untuk iterasi saja sedangkan iterable dapat mengiterasi dan memiliki method splititerator (belum ada informasi lanjut).</description>
+    </item>
+    <item>
+      <title>Perkenalan</title>
+      <link>http://localhost:1313/blog/perkenalan/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/perkenalan/</guid>
+      <description>Hallo semua, halaman ini berisi perkenalan dari saya sang penulis. Saya telah membuat website blog kurang lebih 3x, pada mulanya saya ingin membuat sebuah catatan sekaligus melatih keterampilan menulis saya. Pertama kali saya menulis adalah dengan medium sampai sekarang saya terkadang masih menulis disana, tetapi ingin sekali memiliki website yang banyak pengunjung dan bermanfaat, oleh karena itu saya mencoba untuk membuat website sendiri dan deploy sendiri. Alhasil bertemu dengan SSG (static site generator), saya mencoba banyak sekali SSG ada 2 yang saya deploy ke public yakni dengan MkDocs dan Docusaurus.</description>
+    </item>
+    <item>
+      <title>Pengalaman upgrade versi linux bantuan chatgpt</title>
+      <link>http://localhost:1313/blog/upgrade-versi-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/upgrade-versi-linux/</guid>
+      <description>Pendahuluan Penggunaan AI (artificial intelligence) saat ini banyak diterapkan dan digunakan pada banyak bidang, bagi saya sendiri ai seperti chatgpt adalah seacrh engine baru yang lebih baik ketimbag konvensional seperti google search engine. Pada contoh kali ini saya menggunakan chatgpt untuk membantu saya akan ketidaktahuan saya tentang linux terlebih upgrade versi linux, sebagai informasi saya menggunakan linux untuk kegiatan sehari - hari karena windows terlalu berat untuk saya, dan menurut saya linux mudah dipahami seperti ubuntu atau kubuntu, tidak semenyeramkan apa yang ada di internet.</description>
+    </item>
+  </channel>
+</rss>
