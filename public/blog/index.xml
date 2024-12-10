@@ -51,6 +51,13 @@
       <description>Hallo semua, halaman ini berisi perkenalan dari saya sang penulis. Saya telah membuat website blog kurang lebih 3x, pada mulanya saya ingin membuat sebuah catatan sekaligus melatih keterampilan menulis saya. Pertama kali saya menulis adalah dengan medium sampai sekarang saya terkadang masih menulis disana, tetapi ingin sekali memiliki website yang banyak pengunjung dan bermanfaat, oleh karena itu saya mencoba untuk membuat website sendiri dan deploy sendiri. Alhasil bertemu dengan SSG (static site generator), saya mencoba banyak sekali SSG ada 2 yang saya deploy ke public yakni dengan MkDocs dan Docusaurus.</description>
     </item>
     <item>
+      <title>Functional Programming 1</title>
+      <link>http://localhost:1313/blog/functional-programming-java-part-1/</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/functional-programming-java-part-1/</guid>
+      <description>Pendahuluan Fungsional programming adalah suatu cara paradigma untuk menggunakan fungsi/method dalam memecahkan masalah, umumnya pada parameter method kita akan melihat variable apa saja yang dibutuhkan, tetapi pada fungsional programming kita dapat menaruh kode proses dalam parameter tersebut. Di java kita mengenal lambda, untuk melakukan fungsional programming, fitur ini sangat bagus jika digabung bersama api stream. Pada kesempatan kali ini kita akan mencoba fungsional programming dengan java.&#xA;Praktik 1. Merubah data ke bentuk lain Pada kasus ini kita akan merubah suatu objek ke objek lain</description>
+    </item>
+    <item>
       <title>Pengalaman upgrade versi linux bantuan chatgpt</title>
       <link>http://localhost:1313/blog/upgrade-versi-linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

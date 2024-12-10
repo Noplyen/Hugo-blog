@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="9GcPPg4k0lUOwModdQCYP1LMNdgLismdaIAXj_JyQCU" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/clipboard-js/dist/clipboard.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9d4a42d6333b453f9938d1e8ac7bdd9b"}'></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css">
+
+    <meta name="description"
+          content="learn functional programming java part 1">
+
+    <meta name="author"
+          content="anton-zuckeberg">
+
+
+    <title>
+        Functional Programming 1
+    </title>
+
+</head><body><nav class="navbar bg-body-primary-color sticky-top
+border-bottom border-2 border-primary-color bg-white">
+    <div class="container-fluid">
+
+        <div class="mx-auto">
+            <a class="navbar-brand d-flex align-items-center"
+               href="http://localhost:1313/">
+                <img src="/Bexvo.png"
+                     alt="extor"
+                     width="70" height="40">
+            </a>
+        </div>
+
+</nav><div class="min-vh-100">
+
+    <div class="container-read my-5">
+        <div class="mt-4">
+
+
+            <div class="d-flex justify-content-end"
+                 id="google_translate_element"></div>
+
+
+
+            <h1 class="fs-1 fw-bold">Functional Programming 1</h1>
+
+            <div class="mt-3">
+
+                <div class="d-flex justify-content-between">
+                    <span class="d-block">author : anton-zuckeberg</span>
+
+                    <input type="hidden" id="link-copy" value="http://localhost:1313/blog/functional-programming-java-part-1/">
+
+                    <button type="button"
+                            id="button-copy"
+                            class="button-copy d-inline"
+                            data-clipboard-target="#link-copy">
+                        copy url
+                    </button>
+
+                </div>
+                <span class="d-block">published on : 10 Jan 2024</span>
+
+            </div>
+
+            <div class="my-3">
+
+                
+                <figure style="max-width: 600px;" class="mx-auto">
+                    <img alt="thumbnail"
+                         class="card-img-top img-fluid border border-black"
+                         src="/thumbnail/java.webp">
+                </figure>
+                
+
+
+                <span style="font-size: 18px">
+                    <h4 id="pendahuluan">Pendahuluan</h4>
+<p>Fungsional programming adalah suatu cara paradigma untuk menggunakan fungsi/method
+dalam memecahkan masalah, umumnya pada parameter method kita akan melihat variable
+apa saja yang dibutuhkan, tetapi pada fungsional programming kita dapat menaruh kode
+proses dalam parameter tersebut. Di java kita mengenal lambda, untuk melakukan
+fungsional programming, fitur ini sangat bagus jika digabung bersama api stream. Pada
+kesempatan kali ini kita akan mencoba fungsional programming dengan java.</p>
+<h4 id="praktik">Praktik</h4>
+<h5 id="1-merubah-data-ke-bentuk-lain">1. Merubah data ke bentuk lain</h5>
+<p>Pada kasus ini kita akan merubah suatu objek ke objek lain</p>
+<ol>
+<li>Membuat employee class</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">fullName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Setter dan getter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ol start="2">
+<li>Membuat userDto class</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserDTO</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// setter dan getter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li>Membuat class repository employee sederhana yang menampung data employee</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EmployeeRepository</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">EmployeeRepository</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">employee1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">((</span><span class="kt">short</span><span class="p">)</span><span class="n">1</span><span class="p">,</span><span class="s">&#34;Agustina&#34;</span><span class="p">,</span><span class="s">&#34;Agustina Anggraeni&#34;</span><span class="p">,</span><span class="s">&#34;agustina@yoo.co.id&#34;</span><span class="p">,(</span><span class="kt">short</span><span class="p">)</span><span class="n">29</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">employee2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">((</span><span class="kt">short</span><span class="p">)</span><span class="n">2</span><span class="p">,</span><span class="s">&#34;Mahendra&#34;</span><span class="p">,</span><span class="s">&#34;Muali Mahendra&#34;</span><span class="p">,</span><span class="s">&#34;mahendra@yoo.co.id&#34;</span><span class="p">,(</span><span class="kt">short</span><span class="p">)</span><span class="n">22</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">employee3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">((</span><span class="kt">short</span><span class="p">)</span><span class="n">3</span><span class="p">,</span><span class="s">&#34;Eka&#34;</span><span class="p">,</span><span class="s">&#34;Kusnaedi Ekawati&#34;</span><span class="p">,</span><span class="s">&#34;eka@yoo.co.id&#34;</span><span class="p">,(</span><span class="kt">short</span><span class="p">)</span><span class="n">30</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">employee4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">((</span><span class="kt">short</span><span class="p">)</span><span class="n">4</span><span class="p">,</span><span class="s">&#34;Christian&#34;</span><span class="p">,</span><span class="s">&#34;Christian Yonex&#34;</span><span class="p">,</span><span class="s">&#34;yonex@yoo.co.id&#34;</span><span class="p">,(</span><span class="kt">short</span><span class="p">)</span><span class="n">33</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Employee</span><span class="w"> </span><span class="n">employee5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Employee</span><span class="p">((</span><span class="kt">short</span><span class="p">)</span><span class="n">5</span><span class="p">,</span><span class="s">&#34;Bram&#34;</span><span class="p">,</span><span class="s">&#34;Bramesta Jonnet&#34;</span><span class="p">,</span><span class="s">&#34;bram@yoo.co.id&#34;</span><span class="p">,(</span><span class="kt">short</span><span class="p">)</span><span class="n">23</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">employee1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">employee2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">employee3</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">employee4</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">employee5</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getEmployees</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> 
+</span></span></span></code></pre></div><ol start="4">
+<li>Membuat class service dan implementasi fungsional programming</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EmployeeService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">EmployeeRepository</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">EmployeeService</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">employeeRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EmployeeRepository</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Case 1 parsing data (DTO)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// without functional programming</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_Type1</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userDTOS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">employees</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">UserDTO</span><span class="w"> </span><span class="n">userDTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserDTO</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTOS</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">userDTO</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w">  </span><span class="n">userDTOS</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Case 1 parsing data (DTO)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// with functional programming</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_type2</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">employee</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">UserDTO</span><span class="w"> </span><span class="n">userDTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserDTO</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">userDTO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Case 1 parsing data (DTO)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// with functional programming</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_type3</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="k">this</span><span class="p">::</span><span class="n">toUserDTO</span><span class="p">).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">UserDTO</span><span class="w"> </span><span class="nf">toUserDTO</span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UserDTO</span><span class="w"> </span><span class="n">userDTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserDTO</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">userDTO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Case 1 parsing data (DTO)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// with functional programming</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_type4</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">UserDTO</span><span class="p">::</span><span class="k">new</span><span class="p">).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="penjelasan">Penjelasan</h3>
+<p>Kita fokus ke no 4 pada bagian service, dimana proses penggunaan
+fungsional terjadi. Pada service diatas kita sedang merubah list
+employee menjadi userDto, ada beberapa cara dalam penerapannya.</p>
+<ol>
+<li>tanpa fungsional programming
+Disini terlihat sangat panjang tetapi masih mudah untuk dipahami,
+dimana kita menampung data employee pada <code>employees</code> lalu membuat
+arraylist userDto untuk menampung data yang sudah diubah. Dan proses
+foreach adalah proses perubahan dari employee menjadi userDto terjadi.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_Type1</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userDTOS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">employees</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">UserDTO</span><span class="w"> </span><span class="n">userDTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserDTO</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">userDTOS</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">userDTO</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w">  </span><span class="n">userDTOS</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ol start="2">
+<li>Menggunakan fungsional programming
+Pada fungsi tipe ke 2 sudah menggunakan fungsional programming (lambda),
+kita menggunakan stream (aliran) lalu dipetakan dengan <code>map</code> yang didalamnya
+terdapat lambda ekspresi yang akan merubah setiap data employee menjadi userDto,
+dan terakhir di collect menjadi list. Tipe ini sudah cukup baik tetapi saya
+memiliki cara yang lebih baik pada tipe ke 3 dan 4.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_type2</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// employee disini merupakan data iterasi yang berlangsung</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// jika ada 10 data maka akan diiterasi sebanyak 10x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// setiap data akan diubah menjadi userDto</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// dan ditempatkan pada suatu penampung hingga 10 data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// berhasil di iterasi, dan semua data akan ditampung</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// pada list lihat (.toList())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">employee</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">UserDTO</span><span class="w"> </span><span class="n">userDTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserDTO</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">userDTO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Pada tipe ke 3 kita memisahkan logika dalam merubah setiap data employee
+menjadi userDto ke dalam sebuah fungsi <code>toUserDto</code>, jadi pada <strong>map</strong>
+akan memanggil fungsi tersebut.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_type3</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="k">this</span><span class="p">::</span><span class="n">toUserDTO</span><span class="p">).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">UserDTO</span><span class="w"> </span><span class="nf">toUserDTO</span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UserDTO</span><span class="w"> </span><span class="n">userDTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserDTO</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userDTO</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">userDTO</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Pada tipe ke 4, ini lebih canggih dimana kita akan membuat
+konstruktor tambahan pada <code>userDto</code> dengan parameter <code>employee</code>
+untuk merubah data employee menjadi userdto.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">UserDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUserDTO_type4</span><span class="p">(){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">employeeRepository</span><span class="p">.</span><span class="na">getEmployees</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">UserDTO</span><span class="p">::</span><span class="k">new</span><span class="p">).</span><span class="na">toList</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>pada class userDto</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="nf">UserDTO</span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employee</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employee</span><span class="p">.</span><span class="na">getEmail</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employee</span><span class="p">.</span><span class="na">getName</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<p><em>Ilmu ini saya dapat dari Victor Rentea pada video devoxx</em> <a href="https://www.youtube.com/watch?v=YnzisJh-ZNI">here</a></p>
+
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'id'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        
+        const btn = document.getElementById('button-copy');
+        var clipboard = new ClipboardJS(btn);
+
+        clipboard.on('success', function (e) {
+            const currentLabel = btn.innerHTML;
+
+            if (btn.innerHTML === 'copied') {
+                return;
+            }
+
+            
+            btn.innerHTML = 'copied';
+
+            setTimeout(function () {
+                btn.innerHTML = currentLabel;
+            }, 2000)
+        });
+    </script>
+
+    <script>
+        function createCopyButton(highlightDiv) {
+            const button = document.createElement("button");
+            button.className = "button-copy";
+            button.type = "button";
+            button.innerText = "copy";
+            button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
+            highlightDiv.insertBefore(button, highlightDiv.firstChild);
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "highlight-wrapper";
+            highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+            wrapper.appendChild(highlightDiv);
+        }
+
+        document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+
+        async function copyCodeToClipboard(button, highlightDiv) {
+            const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code").innerText;
+            try {
+                var result = await navigator.permissions.query({ name: "clipboard-write" });
+                if (result.state == "granted" || result.state == "prompt") {
+                    await navigator.clipboard.writeText(codeToCopy);
+                } else {
+                    copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+                }
+            } catch (_) {
+                copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+            } finally {
+                button.blur();
+                button.innerText = "copied";
+                setTimeout(function () {
+                    button.innerText = "copy";
+                }, 2000);  }
+        }
+
+        function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
+            const textArea = document.createElement("textArea");
+            textArea.contentEditable = "true";
+            textArea.readOnly = "false";
+            textArea.className = "copyable-text-area";
+            textArea.value = codeToCopy;
+            highlightDiv.insertBefore(textArea, highlightDiv.firstChild);
+            const range = document.createRange();
+            range.selectNodeContents(textArea);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            textArea.setSelectionRange(0, 999999);
+            document.execCommand("copy");
+            highlightDiv.removeChild(textArea);
+        }
+
+    </script>
+
+
+
+</div><div class="border-top border-primary-color">
+
+    <div class="container-xl">
+
+        <div class="d-flex flex-column align-items-lg-center text-lg-center">
+            <span class="text-lg-center fs-5">site map</span>
+            <div class="d-flex flex-row gap-2 justify-content-lg-center">
+                <a class="link-underline" aria-current="page" href="http://localhost:1313/">Home</a>
+                <a class="link-underline" href="#">Author</a>
+                <a class="link-underline" href="#">Resource</a>
+                <a class="link-underline" href="http://localhost:1313//about">About</a>
+            </div>
+
+            <div class="mb-3">
+                <span class="small" style="color: #8a8c88">build with hugo - custom theme By Me</span>
+            </div>
+
+        </div>
+
+    </div>
+</div></body>
+</html>
