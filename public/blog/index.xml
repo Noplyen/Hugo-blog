@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on bexvo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Soal 1</title>
+      <link>http://localhost:1313/blog/soal-1/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/soal-1/</guid>
+      <description>Soal dan Jawaban Berikut ini adalah komponen yang memberikan kontribusi kepada Resiko keamanan perusahaan, kecuali &amp;hellip; a. Asset d. Threats b. Vulnerabilities e. Authentication c. Authentication Usaha untuk menjaga informasi dari orang yang tidak berhak mengakses, adalah &amp;hellip; a. Privacy d. Availability b. Authentication e. Access Control c. Integrity Aspek yang menjaga agar seseorang tidak dapat menyangkal telah melakukan sebuah transaksi disebut &amp;hellip; a. Availability d. Non-Repudiation b. Confidentiality c. Integrity Penggunaan “Manajemen resiko” pada perusahaan untuk menghadapi ancaman disarankan oleh &amp;hellip; a.</description>
+    </item>
     <item>
       <title>Ilmu Dasar Terpakai Untuk Membaca Surat Tanah</title>
       <link>http://localhost:1313/blog/ilmu-dasar-matematika/</link>
